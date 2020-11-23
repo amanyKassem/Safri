@@ -41,7 +41,7 @@ function Home({navigation,route}) {
         <Container style={[styles.bg_black]}>
             <Content contentContainerStyle={[styles.bgFullWidth , styles.bg_black]}>
 
-                <Header navigation={navigation} title={ i18n.t('home') } search={search}/>
+                <Header navigation={navigation} title={ i18n.t('home') }/>
 
                 <View style={[styles.Width_90,styles.SelfCenter , styles.marginBottom_20 , styles.marginTop_15]}>
                     <Input style={[styles.inputSearch , styles.Width_100 , {flex:0}]}
@@ -62,20 +62,18 @@ function Home({navigation,route}) {
                        <Swiper key={2} dotStyle={styles.eventdoteStyle} activeDotStyle={styles.eventactiveDot}
                                containerStyle={styles.eventswiper} showsButtons={false} autoplay={true}>
 
-                           <TouchableOpacity>
-                               <Image source={require("../../assets/images/banner_home.png")}
-                                      style={styles.swiperImg} resizeMode={'cover'}/>
+                           <TouchableOpacity onPress={() => navigation.navigate('offerDetails')}>
+                               <Image source={require("../../assets/images/banner_home.png")} style={styles.swiperImg} resizeMode={'cover'}/>
                            </TouchableOpacity>
 
-                           <TouchableOpacity>
-                               <Image source={require("../../assets/images/banner_red.png")}
-                                      style={styles.swiperImg} resizeMode={'cover'}/>
+                           <TouchableOpacity onPress={() => navigation.navigate('offerDetails')}>
+                               <Image source={require("../../assets/images/banner_red.png")} style={styles.swiperImg} resizeMode={'cover'}/>
                            </TouchableOpacity>
 
                        </Swiper>
                    </View>
 
-                    <TouchableOpacity style={[styles.marginTop_10, styles.paddingHorizontal_20 , styles.marginBottom_25]}>
+                    <TouchableOpacity onPress={() => navigation.navigate('offers')} style={[styles.marginTop_10, styles.paddingHorizontal_20 , styles.marginBottom_25]}>
                         <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_16 , styles.flexCenter , styles.textDecoration]}>{i18n.t('watchOffer')}</Text>
                     </TouchableOpacity>
 

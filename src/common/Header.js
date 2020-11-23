@@ -41,7 +41,7 @@ function Header({navigation , title}) {
                     </TouchableOpacity>
                     {
                         title === i18n.t('home')  ?
-                            <TouchableOpacity onPress={() => navigation.navigate('notification')} style={{marginRight:15}}>
+                            <TouchableOpacity onPress={() => navigation.navigate('commonStack', {screen: 'notifications'})} style={{marginRight:15}}>
                                 <Image source={require('../../assets/images/notification_non_active.png')} style={[styles.icon23 , styles.transform]} resizeMode={'contain'} />
                             </TouchableOpacity>
                             :
@@ -49,6 +49,14 @@ function Header({navigation , title}) {
                     }
 
                 </View>
+
+                {
+                    title !== i18n.t('home')  ?
+                        <Text style={[styles.textBold , styles.text_White , styles.textSize_16]}>{title}</Text>
+                        :
+                        null
+                }
+
 
                 {
                     title === i18n.t('home')  ?
@@ -65,7 +73,9 @@ function Header({navigation , title}) {
 
                         </View>
                         :
-                        null
+                        <TouchableOpacity onPress={() => navigation.goBack()} >
+                            <Image source={require('../../assets/images/arrow_left.png')} style={[styles.icon23 , styles.transform]} resizeMode={'contain'} />
+                        </TouchableOpacity>
                 }
 
             </View>

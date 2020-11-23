@@ -76,7 +76,7 @@ export default function CustomDrawerContent(props) {
                             )
                         }
                     }
-                    onPress={() => props.navigation.navigate('homeStack')}
+                    onPress={() => props.navigation.navigate('home')}
                 />
 
                 <DrawerItem
@@ -110,7 +110,7 @@ export default function CustomDrawerContent(props) {
                     icon={
                         ({ focused, color }) => {
                             return (
-                                <Image source={require('../../assets/images/noun_profile.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                                <Image source={require('../../assets/images/noun_myOrders.png')} style={[styles.icon20]} resizeMode={'contain'} />
                             )
                         }
                     }
@@ -136,7 +136,6 @@ export default function CustomDrawerContent(props) {
                     onPress={() => props.navigation.navigate('wallet')}
                 />
 
-
                 <DrawerItem
                     style={[styles.justifyCenter , {marginHorizontal:20 }]}
                     label={
@@ -155,7 +154,6 @@ export default function CustomDrawerContent(props) {
                     }
                     onPress={() => props.navigation.navigate('specialOrder')}
                 />
-
 
                 <DrawerItem
                     style={[styles.justifyCenter , {marginHorizontal:20 }]}
@@ -176,7 +174,6 @@ export default function CustomDrawerContent(props) {
                     onPress={() => props.navigation.navigate('bills')}
                 />
 
-
                 <DrawerItem
                     style={[styles.justifyCenter , {marginHorizontal:20 }]}
                     label={
@@ -195,7 +192,6 @@ export default function CustomDrawerContent(props) {
                     }
                     onPress={() => props.navigation.navigate('aboutApp')}
                 />
-
 
                 <DrawerItem
                     style={[styles.justifyCenter , {marginHorizontal:20 }]}
@@ -216,7 +212,6 @@ export default function CustomDrawerContent(props) {
                     onPress={() => props.navigation.navigate('appPolicy')}
                 />
 
-
                 <DrawerItem
                     style={[styles.justifyCenter , {marginHorizontal:20 }]}
                     label={
@@ -235,7 +230,6 @@ export default function CustomDrawerContent(props) {
                     }
                     onPress={() => props.navigation.navigate('contactUs')}
                 />
-
 
                 <DrawerItem
                     style={[styles.justifyCenter , {marginHorizontal:20 }]}
@@ -256,7 +250,6 @@ export default function CustomDrawerContent(props) {
                     onPress={() => onShare()}
                 />
 
-
                 <DrawerItem
                     style={[styles.justifyCenter , {marginHorizontal:20 }]}
                     label={
@@ -276,7 +269,6 @@ export default function CustomDrawerContent(props) {
                     onPress={() => props.navigation.navigate('settings')}
                 />
 
-
                 <DrawerItem
                     style={[styles.justifyCenter , {marginHorizontal:20 }]}
                     label={
@@ -295,7 +287,6 @@ export default function CustomDrawerContent(props) {
                     }
                     onPress={() => props.navigation.navigate('logout')}
                 />
-
 
             </View>
         </DrawerContentScrollView>

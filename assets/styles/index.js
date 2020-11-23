@@ -284,6 +284,9 @@ const styles = ({
     paddingVertical_5 : {
         paddingVertical      : 5
     },
+    paddingVertical_7 : {
+        paddingVertical      : 7
+    },
     paddingVertical_10 : {
         paddingVertical      : 10
     },
@@ -490,6 +493,9 @@ const styles = ({
     justifyStart : {
         justifyContent      : 'flex-start',
     },
+    alignCenter : {
+        alignItems      : 'center',
+    },
     alignStart : {
         alignSelf      : 'flex-start',
     },
@@ -650,6 +656,9 @@ const styles = ({
     width_150 : {
         width               : 150
     },
+    width_180 : {
+        width               : 180
+    },
     height_10 : {
         height               : 10
     },
@@ -809,6 +818,10 @@ const styles = ({
     icon40 : {
         width               : 40,
         height              : 40
+    },
+    icon45 : {
+        width               : 45,
+        height              : 45
     },
 
     //  Style Header
@@ -1529,6 +1542,13 @@ const styles = ({
         borderRadius: 25,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    shadow :{
+        shadowColor: '#f2f2f2',
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+        borderRadius: 2
     },
     wrapText: { flexDirection: 'column', top: 450, position: 'absolute', width: '100%' , paddingHorizontal:25 , justifyContent:'center' , alignItems:'center' },
     introButton: { position: 'absolute', bottom: 0, width, backgroundColor: COLORS.mstarda, height: 50, justifyContent:'center', alignItems:'center', },
