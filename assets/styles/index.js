@@ -425,7 +425,7 @@ const styles = ({
         backgroundColor     : "rgba(250, 218, 208, 0.9)"
     },
     overlay_white : {
-        backgroundColor     : "rgba(255, 255, 255, 0.7)"
+        backgroundColor     : "#ffffff36"
     },
     overlay_black : {
         backgroundColor     : "rgba(0, 0, 0, 0.5)"
@@ -677,6 +677,9 @@ const styles = ({
     height_40 : {
         height               : 40
     },
+    height_45 : {
+        height               : 45
+    },
     height_50 : {
         height               : 50
     },
@@ -718,6 +721,9 @@ const styles = ({
     },
     height_320 : {
         height              : 320
+    },
+    height_400 : {
+        height              : 400
     },
     heightFull : {
         height              : '100%'
@@ -1264,7 +1270,7 @@ const styles = ({
     },
     Active : {
         borderWidth           : 1,
-        borderColor           : COLORS.babyblue,
+        borderColor           : COLORS.mstarda,
         zIndex:-1
     },
     noActive : {
@@ -1431,11 +1437,9 @@ const styles = ({
         justifyContent:'center'
     },
     bgModel : {
-        width                   : "100%",
+        width                   : "95%",
         flex                    : 1,
         alignSelf               : 'center',
-        justifyContent          : 'flex-end',
-        bottom                  :-18,
     },
     modalBorder : {
         width:'40%',

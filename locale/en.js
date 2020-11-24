@@ -6,6 +6,7 @@ const en = {
     'password'                  : 'Password',
     'currentPassword'           : 'Current Password',
     'forgetPassword'            : 'Forgot your password?',
+    'changePass'                : 'Change password',
     'haveNoAcc'                 : 'Have no account ?',
     'registerNow'               : 'Register now',
     'PassReco'                  : 'Password recovery',
@@ -70,6 +71,15 @@ const en = {
     'currentBalance'            : 'Current Balance',
     'ordersNeedPrice'           : 'Orders need a price',
     'specialOrders'             : 'Special orders',
+    'copyPromoCode'             : 'Copy the promo code',
+    'sendMsg'                   : 'Send message',
+    'message'                   : 'Message',
+    'throughSocial'             : 'Or via social media',
+    'chooseLanguage'            : 'Choose language',
+    'restaurantDetails'         : 'Restaurant details',
+    'locationOnMap'             : 'Location on the map',
+    'minimumOrder'              : 'Minimum order',
+    'addSpecialOrder'           : 'Add a special request',
 };
 
 export default en;

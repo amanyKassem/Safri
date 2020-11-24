@@ -6,6 +6,7 @@ const ar = {
     'password'                  : 'كلمه المرور',
     'currentPassword'           : 'كلمه المرور الحالية',
     'forgetPassword'            : 'هل نسيت كلمه المرور ؟',
+    'changePass'                : 'تغيير كلمه المرور',
     'haveNoAcc'                 : 'ليس لديك حساب ؟',
     'registerNow'               : 'سجل الآن',
     'PassReco'                  : 'استعاده كلمه المرور',
@@ -70,6 +71,15 @@ const ar = {
     'currentBalance'            : 'رصيدك الحالي',
     'ordersNeedPrice'           : 'طلبات تحتاج لسعر',
     'specialOrders'             : 'طلبات خاصة',
+    'copyPromoCode'             : 'نسخ الرمز الترويجي',
+    'sendMsg'                   : 'ارسال رسالة',
+    'message'                   : 'الرسالة',
+    'throughSocial'             : 'او عبر التواصل الاجتماعي',
+    'chooseLanguage'            : 'اختر اللغة',
+    'restaurantDetails'         : 'تفاصيل المطعم',
+    'locationOnMap'             : 'الموقع علي الخريطة',
+    'minimumOrder'              : 'الحد الأدني للطلب',
+    'addSpecialOrder'           : 'اضافة طلب خاص',
 };
 
 export default ar;

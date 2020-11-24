@@ -23,6 +23,9 @@ export const chooseLang = lang => {
 const setLang = async lang => {
     await AsyncStorage.setItem('lang', lang).then (() =>{
         console.log(lang)
-        Updates.reload();
+        Updates.reloadAsync();
     });
 };
+
+
+

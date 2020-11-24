@@ -40,8 +40,8 @@ function Header({navigation , title}) {
                         <Image source={require('../../assets/images/menu.png')} style={[styles.icon23 , styles.transform]} resizeMode={'contain'} />
                     </TouchableOpacity>
                     {
-                        title === i18n.t('home')  ?
-                            <TouchableOpacity onPress={() => navigation.navigate('commonStack', {screen: 'notifications'})} style={{marginRight:15}}>
+                        title === i18n.t('home')  || title === i18n.t('restaurantDetails')  ?
+                            <TouchableOpacity onPress={() => navigation.navigate('notifications')} style={{marginRight:15}}>
                                 <Image source={require('../../assets/images/notification_non_active.png')} style={[styles.icon23 , styles.transform]} resizeMode={'contain'} />
                             </TouchableOpacity>
                             :
@@ -73,9 +73,24 @@ function Header({navigation , title}) {
 
                         </View>
                         :
-                        <TouchableOpacity onPress={() => navigation.goBack()} >
-                            <Image source={require('../../assets/images/arrow_left.png')} style={[styles.icon23 , styles.transform]} resizeMode={'contain'} />
-                        </TouchableOpacity>
+                            title === i18n.t('restaurantDetails')?
+                                <View style={[styles.directionRow]}>
+                                    <View style={{marginRight:15}}>
+                                        <TouchableOpacity onPress={() => navigation.navigate('basket')} >
+                                            <Image source={require('../../assets/images/basket.png')} style={[styles.icon23 , styles.transform]} resizeMode={'contain'} />
+                                        </TouchableOpacity>
+                                        <View style={[styles.icon17 , styles.Radius_50 , styles.bg_mstarda , styles.justifyCenter ,{position:'absolute' , left:-5 , top:0}]}>
+                                            <Text style={[styles.textRegular , styles.text_White , styles.textSize_10 , styles.flexCenter]}>1</Text>
+                                        </View>
+                                    </View>
+                                    <TouchableOpacity onPress={() => navigation.goBack()} >
+                                        <Image source={require('../../assets/images/arrow_left.png')} style={[styles.icon23 , styles.transform]} resizeMode={'contain'} />
+                                    </TouchableOpacity>
+                                </View>
+                                :
+                                <TouchableOpacity onPress={() => navigation.goBack()} >
+                                    <Image source={require('../../assets/images/arrow_left.png')} style={[styles.icon23 , styles.transform]} resizeMode={'contain'} />
+                                </TouchableOpacity>
                 }
 
             </View>
