@@ -362,6 +362,9 @@ const styles = ({
     Radius_0 : {
         borderRadius        : 0
     },
+    Radius_3 : {
+        borderRadius        : 3
+    },
     Radius_5 : {
         borderRadius        : 5
     },
@@ -420,6 +423,9 @@ const styles = ({
 
     bg_mstarda : {
         backgroundColor     : COLORS.mstarda
+    },
+    bg_lightMstarda : {
+        backgroundColor     : '#f9e0b4'
     },
     bg_overlay : {
         backgroundColor     : "rgba(250, 218, 208, 0.9)"
@@ -721,6 +727,9 @@ const styles = ({
     },
     height_320 : {
         height              : 320
+    },
+    height_340 : {
+        height              : 340
     },
     height_400 : {
         height              : 400
@@ -1552,10 +1561,75 @@ const styles = ({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
-        borderRadius: 2
+        borderRadius: 2,
     },
-    wrapText: { flexDirection: 'column', top: 450, position: 'absolute', width: '100%' , paddingHorizontal:25 , justifyContent:'center' , alignItems:'center' },
-    introButton: { position: 'absolute', bottom: 0, width, backgroundColor: COLORS.mstarda, height: 50, justifyContent:'center', alignItems:'center', },
+    wrapText: {
+        flexDirection: 'column', top: 450, position: 'absolute', width: '100%' , paddingHorizontal:25 , justifyContent:'center' , alignItems:'center'
+    },
+    introButton: {
+        position: 'absolute', bottom: 0, width, backgroundColor: COLORS.mstarda, height: 50, justifyContent:'center', alignItems:'center',
+    },
+    mainScroll: {
+        borderBottomWidth: 2,
+        borderBottomColor: '#dcdada94',
+        height: 50,
+    },
+    scrollTouch: {
+        width: 60,
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%',
+        marginHorizontal: 1,
+        paddingHorizontal: 5,
+        paddingVertical: 20,
+
+    },
+    scrollText: {
+        fontSize: 12,
+        fontFamily: 'flatRegular',
+        height: 50,
+        lineHeight: 50
+    },
+    triangle: {
+        width: 0,
+        height: 0,
+        backgroundColor: 'transparent',
+        borderStyle: 'solid',
+        borderLeftWidth: 4,
+        borderRightWidth: 4,
+        borderBottomWidth: 7,
+        borderLeftColor: 'transparent',
+        borderRightColor: 'transparent',
+        position: 'absolute',
+        bottom: 0
+    },
+    followStep:{
+        flexDirection:'row',
+        alignItems:'center',
+        marginBottom:25
+    },
+    stepLine:{
+        height:30,
+        backgroundColor:COLORS.mstarda,
+        width:1.5,
+        position:'absolute',
+        left:9,
+        top:20
+    },skyCircle:{
+        backgroundColor:COLORS.mstarda,
+        borderColor:COLORS.mstarda,
+        borderWidth:1,
+        width:20,
+        height:20,
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:50,
+        marginRight:10
+    },
+    checkCircle:{
+        fontSize:15,
+        color:'#fff',
+    },
 });
 
 export default styles;

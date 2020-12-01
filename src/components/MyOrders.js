@@ -20,14 +20,14 @@ function MyOrders({navigation,route}) {
 
     const [active, setActive] = useState(0);
     const myOrders =[
-        {id :'0',name:'مطاعم'  , price:'25 ر.س' , orderNum:'12345', image:require("../../assets/images/restu_image.png")},
-        {id :'1',name:'محلات'  , price:'25 ر.س' , orderNum:'12345', image:require("../../assets/images/depart_two.png")},
-        {id :'2',name:'مخابز'  , price:'25 ر.س' , orderNum:'12345', image:require("../../assets/images/depart_four.png")},
-        {id :'3',name:'حلويات'  , price:'25 ر.س' , orderNum:'12345', image:require("../../assets/images/depart_six.png")},
+        {id :'0',name:'مطاعم'  , price:'25 ر.س' , orderNum:'12345', invoiceAmount:'123456', image:require("../../assets/images/restu_image.png")},
+        {id :'1',name:'محلات'  , price:'25 ر.س' , orderNum:'12345', invoiceAmount:'123456', image:require("../../assets/images/depart_two.png")},
+        {id :'2',name:'مخابز'  , price:'25 ر.س' , orderNum:'12345', invoiceAmount:'123456', image:require("../../assets/images/depart_four.png")},
+        {id :'3',name:'حلويات'  , price:'25 ر.س' , orderNum:'12345', invoiceAmount:'123456', image:require("../../assets/images/depart_six.png")},
     ]
-    function Item({ name , image , price , orderNum , id , index }) {
+    function Item({ name , image , price , orderNum , invoiceAmount , id , index }) {
         return (
-            <TouchableOpacity onPress={() => navigation.navigate('category')} style={[styles.borderGray,styles.marginBottom_20 , styles.directionRow , styles.Radius_5 , {flex:1 , padding:15}]}>
+            <TouchableOpacity onPress={() => navigation.navigate(active === 1 ? 'productDetails' : 'orderDetails')} style={[styles.borderGray,styles.marginBottom_20 , styles.directionRow , styles.Radius_5 , {flex:1 , padding:15}]}>
                 <View style={[styles.directionBasicRow , {flex:1}]}>
                     <Image source={image} style={[styles.icon70 , styles.Radius_7]} resizeMode={'cover'} />
                     <View style={[{marginLeft:15}]}>
@@ -36,8 +36,8 @@ function MyOrders({navigation,route}) {
                     </View>
                 </View>
                 <View style={[{borderLeftWidth:1 , borderLeftColor:'#ddd' , paddingLeft:15} , styles.heightFull , styles.centerContext]}>
-                    <Text style={[styles.textRegular , styles.text_mstarda , styles.textSize_14 , styles.marginBottom_5]}>{ i18n.t('orderNum') }</Text>
-                    <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14]}>{ orderNum }</Text>
+                    <Text style={[styles.textRegular , styles.text_mstarda , styles.textSize_14 , styles.marginBottom_5]}>{ active === 1 ? i18n.t('invoiceAmount') : i18n.t('orderNum') }</Text>
+                    <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14]}>{  active === 1 ? invoiceAmount : orderNum }</Text>
                 </View>
             </TouchableOpacity>
         );
@@ -75,6 +75,7 @@ function MyOrders({navigation,route}) {
                                 image={item.image}
                                 price={item.price}
                                 orderNum={item.orderNum}
+                                invoiceAmount={item.invoiceAmount}
                                 index={index}
                             />}
                             keyExtractor={item => item.id}
