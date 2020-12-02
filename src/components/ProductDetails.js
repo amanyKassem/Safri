@@ -29,8 +29,10 @@ function ProductDetails({navigation,route}) {
     // const lang = useSelector(state => state.lang.lang);
     // const token = useSelector(state => state.auth.user ? state.auth.user.data.token : null);
 
+    const pathName = route.params.pathName ? route.params.pathName : '' ;
+
     const [checkedArr, setCheckedArr] = useState([]);
-    const [GetID, setGetID] = useState([]);
+    const [count, setCount] = useState(1)
 
     const ingredients = [
         {id:0 , name:'بطاطس' , price:'20 رس'},
@@ -38,6 +40,18 @@ function ProductDetails({navigation,route}) {
         {id:2 , name:'بطاطس' , price:'20 رس'},
         {id:3 , name:'بطاطس' , price:'20 رس'},
     ]
+
+    const increment = () => {
+        setCount(count + 1);
+    }
+
+    const decrement = () => {
+        if (count === 1) {
+            setCount(1);
+        } else {
+            setCount(count - 1);
+        }
+    }
 
 
     useEffect(() => {
@@ -116,6 +130,40 @@ function ProductDetails({navigation,route}) {
                             )}
                     />
                     <View style={[styles.line , styles.marginVertical_20]}/>
+
+                    <Text style={[styles.textBold , styles.text_gray , styles.textSize_16 , styles.alignStart , styles.marginBottom_20]}>{i18n.t('selectQuantity') }</Text>
+
+                    <View style={[styles.directionRowCenter , styles.Width_100 , styles.marginBottom_20]}>
+                        <TouchableOpacity onPress={() => increment()} style={[styles.icon35 , styles.bg_mstarda , styles.centerContext , styles.Radius_5]}>
+                            <Icon type={'AntDesign'} name={'plus'} style={[styles.textSize_17 , styles.text_White ]} />
+                        </TouchableOpacity>
+                        <Text style={[styles.textRegular , styles.text_mstarda , styles.textSize_20 , styles.marginHorizontal_35 ]}>{count}</Text>
+                        <TouchableOpacity onPress={() => decrement()} style={[styles.icon35 , styles.centerContext  , styles.Radius_5, {backgroundColor:'#ddd'}]}>
+                            <Icon type={'AntDesign'} name={'minus'} style={[styles.textSize_17 , styles.text_gray ]} />
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={[styles.directionRow , styles.centerContext , styles.Width_100 , styles.marginBottom_20]}>
+                        <Text style={[styles.textRegular , styles.text_gray , styles.textSize_15 ]}>{i18n.t('total') }</Text>
+                        <Text style={[styles.textRegular , styles.text_mstarda , styles.textSize_15 , {marginLeft:10} ]}>25 ر.س</Text>
+                    </View>
+
+                    {
+                        pathName === 'restaurantDetails' ?
+                            <View>
+                                <TouchableOpacity onPress={() => navigation.navigate('basketDetails')} style={[styles.mstrdaBtn , styles.Width_90 , styles.SelfCenter  , styles.marginBottom_10]}>
+                                    <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('orderNow') }</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => navigation.navigate('basket')} style={[styles.mstrdaBtn , styles.Width_90 , styles.bg_black , styles.SelfCenter  , styles.marginBottom_20]}>
+                                    <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('orderLater') }</Text>
+                                </TouchableOpacity>
+                            </View>
+                            :
+                            <TouchableOpacity onPress={() => navigation.navigate('basketDetails')} style={[styles.mstrdaBtn , styles.Width_90 , styles.SelfCenter  , styles.marginBottom_20]}>
+                                <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('reOrder') }</Text>
+                            </TouchableOpacity>
+                    }
+
 
                 </View>
 

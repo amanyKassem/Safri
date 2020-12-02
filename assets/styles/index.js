@@ -275,6 +275,9 @@ const styles = ({
     marginHorizontal_25 : {
         marginHorizontal    : 25
     },
+    marginHorizontal_35 : {
+        marginHorizontal    : 35
+    },
 
     // Padding Space Vertical
 

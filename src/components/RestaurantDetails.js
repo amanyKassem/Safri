@@ -41,7 +41,7 @@ function RestaurantDetails({navigation,route}) {
 
     function Item({ name , desc , image , price , oldPrice , id , index }) {
         return (
-            <TouchableOpacity onPress={() => navigation.navigate('productDetails')} style={[styles.bg_light_gray,styles.marginBottom_20 , styles.directionRow , styles.Radius_5 , {flex:1 , padding:10}]}>
+            <TouchableOpacity onPress={() => navigation.navigate('productDetails' , {pathName: 'restaurantDetails'})} style={[styles.bg_light_gray,styles.marginBottom_20 , styles.directionRow , styles.Radius_5 , {flex:1 , padding:10}]}>
                 <Image source={image} style={[styles.icon70 , styles.Radius_7]} resizeMode={'cover'} />
                 <View style={[{marginLeft:15 , flex:1}]}>
                     <View style={[styles.directionRowSpace , styles.marginBottom_5]}>

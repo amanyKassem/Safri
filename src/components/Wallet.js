@@ -36,8 +36,8 @@ function Wallet({navigation,route}) {
                         <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_24, styles.textCenter ]}>900 ر.س</Text>
                     </View>
 
-                    <TouchableOpacity style={[styles.height_40 , styles.bg_mstarda , styles.Radius_5 , styles.Width_100, styles.centerContext , styles.marginTop_65]}>
-                        <Text style={[styles.textBold , styles.text_White , styles.textSize_15, styles.textCenter ]}>شحن رصيد</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('recharge')} style={[styles.height_40 , styles.bg_mstarda , styles.Radius_5 , styles.Width_100, styles.centerContext , styles.marginTop_65]}>
+                        <Text style={[styles.textBold , styles.text_White , styles.textSize_15, styles.textCenter ]}>{ i18n.t('recharge') }</Text>
                     </TouchableOpacity>
 
                 </View>

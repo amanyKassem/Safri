@@ -27,7 +27,7 @@ function OfferDetails({navigation,route}) {
     ]
     function Item({ name , category , image , space , id , index }) {
         return (
-            <TouchableOpacity onPress={() => navigation.navigate('basketDetails')} style={[styles.borderGray,styles.marginBottom_20 , styles.directionRow , styles.Radius_5 , {flex:1 , padding:15}]}>
+            <TouchableOpacity onPress={() => navigation.navigate('restaurantDetails')} style={[styles.borderGray,styles.marginBottom_20 , styles.directionRow , styles.Radius_5 , {flex:1 , padding:15}]}>
                 <Image source={image} style={[styles.icon70 , styles.Radius_7]} resizeMode={'cover'} />
                 <View style={[{marginLeft:15 , flex:1}]}>
                     <View style={styles.directionRowSpace}>

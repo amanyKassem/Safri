@@ -27,7 +27,7 @@ function SpecialOrder({navigation,route}) {
     ]
     function Item({ name , image , date , orderNum , id , index }) {
         return (
-            <TouchableOpacity onPress={() => navigation.navigate('orderDetails')} style={[styles.borderGray,styles.marginBottom_20 , styles.directionRow , styles.Radius_5 , {flex:1 , padding:10}]}>
+            <TouchableOpacity onPress={() => navigation.navigate(active === 0 ? 'offerPrice' :'orderDetails', {orderType:active})} style={[styles.borderGray,styles.marginBottom_20 , styles.directionRow , styles.Radius_5 , {flex:1 , padding:10}]}>
                 <View style={[styles.directionRow , {flex:1}]}>
                     <Image source={image} style={[styles.icon70 , styles.Radius_7]} resizeMode={'cover'} />
                     <View style={[{marginLeft:15}]}>

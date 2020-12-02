@@ -19,6 +19,8 @@ function OrderDetails({navigation,route}) {
     // const lang = useSelector(state => state.lang.lang);
     // const token = useSelector(state => state.auth.user ? state.auth.user.data.token : null);
 
+    const orderType = route.params.orderType;
+
     const [orderStatus, setOrderStatus] = useState(2);
     const [showDetails, setShowDetails] = useState(false);
 
@@ -85,13 +87,18 @@ function OrderDetails({navigation,route}) {
                     </View>
 
                     <TouchableOpacity onPress={() => setShowDetails(!showDetails)} style={[styles.bg_light_gray , styles.directionRowSpace ,styles.paddingHorizontal_20 , styles.paddingVertical_10]}>
-                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('orderDetails') }</Text>
+                        <Text style={[styles.textBold , (orderStatus === 1 || orderStatus === 2)&& showDetails ? styles.text_mstarda : styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('orderDetails') }</Text>
                         <Icon type={'AntDesign'} name={(orderStatus === 1 || orderStatus === 2) && showDetails ?  'caretup' : 'caretdown'} style={[styles.textSize_12 , (orderStatus === 1 || orderStatus === 2)&& showDetails ? styles.text_mstarda : styles.text_gray]} />
                     </TouchableOpacity>
 
                     {
                         (orderStatus === 1 || orderStatus === 2) && showDetails?
                             <View style={[styles.marginTop_20]}>
+                                <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13,styles.paddingHorizontal_20 , styles.marginBottom_20 , {lineHeight:24}]}>
+                                    أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
+                                    أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
+                                    أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
+                                </Text>
                                 <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10]}>
                                     <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14 , styles.alignStart]}>{i18n.t('payMethod') }</Text>
                                 </View>
@@ -112,12 +119,21 @@ function OrderDetails({navigation,route}) {
                              null
                     }
 
+                    {
+                        orderType === 2 ?
+                            <TouchableOpacity onPress={() => navigation.navigate('basketDetails')} style={[styles.mstrdaBtn , styles.Width_90 , styles.marginTop_55 , styles.SelfCenter ]}>
+                                <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('resend') }</Text>
+                            </TouchableOpacity>
+                            :
+                            null
+                    }
+
                 </View>
 
             </Content>
 
             {
-                orderStatus === 2 ?
+                orderStatus === 2 && orderType !== 2?
                     <TouchableOpacity onPress={() => navigation.navigate('addUrRate')} style={[styles.mstrdaBtn , styles.Width_100 , styles.Radius_0]}>
                         <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('addUrRate') }</Text>
                     </TouchableOpacity>

@@ -40,7 +40,7 @@ function AddUrRateComment({navigation,route}) {
                         value={comment}
                     />
 
-                    <TouchableOpacity onPress={() => navigation.navigate('home')} style={[styles.mstrdaBtn , styles.Width_95  , styles.marginTop_55]}>
+                    <TouchableOpacity onPress={() => navigation.navigate('rateSuccessfully')} style={[styles.mstrdaBtn , styles.Width_95  , styles.marginTop_55]}>
                         <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('add') }</Text>
                     </TouchableOpacity>
 
