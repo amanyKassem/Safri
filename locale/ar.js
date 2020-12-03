@@ -131,6 +131,12 @@ const ar = {
     'waitOrder'                 : 'بانتظار تأكيد طلبك من المطعم',
     'howUrOrder'                : 'كيف كان طلبك ؟',
     'offerPrice'                : 'عرض السعر',
+    'priceOffered'              : 'السعر المقدم',
+    'accept'                    : 'قبول',
+    'refuse'                    : 'رفض',
+    'comp&sug'                  : 'الشكاوي والاقتراحات',
+    'subject'                   : 'موضوع الرسالة',
+    'orderData'                 : 'بيانات الطلب',
 };
 
 export default ar;

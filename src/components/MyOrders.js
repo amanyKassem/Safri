@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
-import {View, Text, Image, TouchableOpacity, Dimensions, FlatList, I18nManager} from "react-native";
+import {View, Text, Image, TouchableOpacity, Dimensions, FlatList, I18nManager, ScrollView} from "react-native";
 import {Container, Content, Icon, Input} from 'native-base'
 import styles from '../../assets/styles'
 import i18n from "../../locale/i18n";
@@ -27,7 +27,7 @@ function MyOrders({navigation,route}) {
     ]
     function Item({ name , image , price , orderNum , invoiceAmount , id , index }) {
         return (
-            <TouchableOpacity onPress={() => navigation.navigate(active === 1 ? 'productDetails' : 'orderDetails', {orderType:active})} style={[styles.borderGray,styles.marginBottom_20 , styles.directionRow , styles.Radius_5 , {flex:1 , padding:15}]}>
+            <TouchableOpacity onPress={() => navigation.navigate(active === 1 ? 'productDetails' : 'orderDetails', {orderType:active , pathName:'myOrders'})} style={[styles.borderGray,styles.marginBottom_20 , styles.directionRow , styles.Radius_5 , {flex:1 , padding:15}]}>
                 <View style={[styles.directionBasicRow , {flex:1}]}>
                     <Image source={image} style={[styles.icon70 , styles.Radius_7]} resizeMode={'cover'} />
                     <View style={[{marginLeft:15}]}>
@@ -52,16 +52,18 @@ function MyOrders({navigation,route}) {
 
                 <View style={[styles.bgFullWidth ,styles.bg_White, styles.Width_100, {overflow:'hidden'}]}>
 
-                    <View style={[styles.directionRowSpace , styles.shadow , {width:'103%' , left:-4}]}>
-                        <TouchableOpacity onPress={() => setActive(0)} style={[styles.paddingVertical_15 , styles.paddingHorizontal_15 , {borderBottomWidth:2 , borderBottomColor:active === 0 ? COLORS.mstarda : 'transparent'}]}>
-                            <Text style={[styles.textBold , styles.text_gray , styles.textSize_13]}>{ i18n.t('orderInProgress') }</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => setActive(1)} style={[styles.paddingVertical_15 , styles.paddingHorizontal_15 , {borderBottomWidth:2 , borderBottomColor:active === 1 ? COLORS.mstarda : 'transparent'}]}>
-                            <Text style={[styles.textBold , styles.text_gray , styles.textSize_13]}>{ i18n.t('finishedOrders') }</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => setActive(2)} style={[styles.paddingVertical_15 , styles.paddingHorizontal_15 , {borderBottomWidth:2 , borderBottomColor:active === 2 ? COLORS.mstarda : 'transparent'}]}>
-                            <Text style={[styles.textBold , styles.text_gray , styles.textSize_13]}>{ i18n.t('canceledOrders') }</Text>
-                        </TouchableOpacity>
+                    <View>
+                        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[styles.scrollView , styles.shadow , {width:'103%' , left:-4}]}>
+                            <TouchableOpacity onPress={() => setActive(0)} style={[styles.paddingVertical_15 , styles.paddingHorizontal_15 , {borderBottomWidth:2 , borderBottomColor:active === 0 ? COLORS.mstarda : 'transparent'}]}>
+                                <Text style={[styles.textBold , styles.text_gray , styles.textSize_13]}>{ i18n.t('orderInProgress') }</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => setActive(1)} style={[styles.paddingVertical_15 , styles.paddingHorizontal_15 , {borderBottomWidth:2 , borderBottomColor:active === 1 ? COLORS.mstarda : 'transparent'}]}>
+                                <Text style={[styles.textBold , styles.text_gray , styles.textSize_13]}>{ i18n.t('finishedOrders') }</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => setActive(2)} style={[styles.paddingVertical_15 , styles.paddingHorizontal_15 , {borderBottomWidth:2 , borderBottomColor:active === 2 ? COLORS.mstarda : 'transparent'}]}>
+                                <Text style={[styles.textBold , styles.text_gray , styles.textSize_13]}>{ i18n.t('canceledOrders') }</Text>
+                            </TouchableOpacity>
+                        </ScrollView>
                     </View>
 
                     <View style={[styles.paddingHorizontal_20 , styles.marginTop_20]}>

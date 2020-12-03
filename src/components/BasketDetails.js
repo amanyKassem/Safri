@@ -55,7 +55,7 @@ function BasketDetails({navigation,route}) {
                     </View>
 
                     <Item style={[styles.item , styles.Width_90 , styles.SelfCenter]}>
-                        <Input style={[styles.input , {borderTopRightRadius :25 , borderColor:coupon ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:coupon ? '#fff' : '#eee'}]}
+                        <Input style={[styles.input , {borderTopRightRadius :25 ,borderTopLeftRadius :25 , borderColor:coupon ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:coupon ? '#fff' : '#eee'}]}
                                placeholder={ i18n.t('enterCode') }
                                placeholderTextColor={COLORS.midGray}
                                onChangeText={(coupon) => setCoupon(coupon)}

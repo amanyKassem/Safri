@@ -14,7 +14,7 @@ const isIOS = Platform.OS === 'ios';
 const latitudeDelta = 0.922;
 const longitudeDelta = 0.521;
 
-function PayMethods({navigation,route}) {
+function OrderData({navigation,route}) {
 
     // const lang = useSelector(state => state.lang.lang);
     // const token = useSelector(state => state.auth.user ? state.auth.user.data.token : null);
@@ -25,17 +25,28 @@ function PayMethods({navigation,route}) {
         <Container style={[styles.bg_black]}>
             <Content contentContainerStyle={[styles.bgFullWidth , styles.bg_black]}>
 
-                <Header navigation={navigation} title={ i18n.t('payMethods') } />
+                <Header navigation={navigation} title={ i18n.t('orderData') } />
 
-                <View style={[styles.bgFullWidth ,styles.bg_White, styles.Width_100,styles.paddingHorizontal_20, {overflow:'hidden'}]}>
+                <View style={[styles.bgFullWidth ,styles.bg_White, styles.Width_100, {overflow:'hidden'}]}>
 
-                    <View style={[styles.bg_lightMstarda,styles.paddingHorizontal_15  , styles.paddingVertical_10 , styles.marginVertical_20]}>
-                        <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14 , styles.alignStart]}>سيتم الاستلام من المطعم</Text>
+                    <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10 , styles.marginVertical_20]}>
+                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('orderDetails') }</Text>
                     </View>
 
-                    <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{ i18n.t('selectPayMethod') }</Text>
+                    <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13,styles.paddingHorizontal_20 , {lineHeight:24}]}>
+                        أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
+                        أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
+                        أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
+                    </Text>
 
-                    <View style={[styles.Width_100 , styles.marginTop_20]}>
+
+                    <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10 , styles.marginVertical_20]}>
+                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('payMethod') }</Text>
+                    </View>
+
+                    <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart, styles.paddingHorizontal_20]}>{ i18n.t('selectPayMethod') }</Text>
+
+                    <View style={[styles.Width_100 , styles.marginTop_20 , styles.paddingHorizontal_20]}>
                         <TouchableOpacity onPress={() => setPayMethod('0')} style={[styles.directionRow , styles.marginBottom_10]}>
                             <Radio
                                 color={payMethod === '0' ? COLORS.mstarda : COLORS.midGray}
@@ -82,7 +93,11 @@ function PayMethods({navigation,route}) {
                             <Text style={[styles.textRegular , payMethod === '4' ? styles.text_mstarda : styles.text_gray , styles.textSize_14 , {marginLeft:10}]}>{ i18n.t('byApple') }</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => navigation.navigate('waitingOrder')} style={[styles.mstrdaBtn , styles.Width_100 , styles.SelfCenter  , styles.marginTop_40 , styles.marginBottom_25]}>
+                        <View style={[styles.bg_lightMstarda,styles.paddingHorizontal_15  , styles.paddingVertical_10 , styles.marginVertical_20]}>
+                            <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14 , styles.alignStart]}>سيتم الاستلام من المطعم</Text>
+                        </View>
+
+                        <TouchableOpacity onPress={() => navigation.navigate('orderDetails', {orderType:'0' , pathName:'orderData'})} style={[styles.mstrdaBtn , styles.Width_100 , styles.SelfCenter  , styles.marginTop_40 , styles.marginBottom_25]}>
                             <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('confirm') }</Text>
                         </TouchableOpacity>
 
@@ -95,6 +110,6 @@ function PayMethods({navigation,route}) {
     );
 }
 
-export default PayMethods;
+export default OrderData;
 
 

@@ -71,14 +71,14 @@ function Notifications({navigation,route}) {
 
                     </View>
 
-                    <View style={[styles.borderGray , styles.Radius_5 , styles.marginTop_15 , styles.paddingVertical_5 , styles.paddingHorizontal_10]}>
+                    <TouchableOpacity onPress={() => navigation.navigate('offerPrice')} style={[styles.borderGray , styles.Radius_5 , styles.marginTop_15 , styles.paddingVertical_5 , styles.paddingHorizontal_10]}>
                         <View style={[styles.directionRow]}>
                             <Image source={require("../../assets/images/image_placeholder.png")} style={[styles.icon45 , styles.Radius_50]} resizeMode={'cover'}/>
                             <View style={[styles.directionRow]}>
-                                <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14 , {marginLeft:10}]}>تم قبول الطلب</Text>
+                                <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14 , {marginLeft:10}]}>تم ارسال سعر 122 مقابل طلبك الخاص</Text>
                             </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
 
                     <View style={[styles.borderGray , styles.Radius_5 , styles.marginTop_15 , styles.paddingVertical_5 , styles.paddingHorizontal_10]}>
                         <View style={[styles.directionRow]}>

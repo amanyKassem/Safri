@@ -43,7 +43,7 @@ function OfferDetails({navigation,route}) {
                             />
                         </View>
                     </View>
-                    <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13]}>{ category }</Text>
+                    <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13, styles.alignStart]}>{ category }</Text>
                     <View style={[styles.directionRow , styles.marginTop_5]}>
                         <Icon type={'MaterialIcons'} name={'location-on'} style={[styles.textSize_14 , styles.text_mstarda , {marginRight:5}]} />
                         <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13]}>{ space }</Text>

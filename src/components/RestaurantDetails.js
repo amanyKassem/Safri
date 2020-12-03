@@ -51,7 +51,7 @@ function RestaurantDetails({navigation,route}) {
                             <Text style={[styles.textRegular , styles.text_mstarda , styles.textSize_13 , {marginLeft:5}]}>{ price }</Text>
                         </View>
                     </View>
-                    <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_12 , {lineHeight:18}]}>{ desc }</Text>
+                    <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_12 , styles.alignStart , styles.writingDir , {lineHeight:18}]}>{ desc }</Text>
                 </View>
             </TouchableOpacity>
         );
@@ -89,7 +89,7 @@ function RestaurantDetails({navigation,route}) {
                             </View>
                             <View style={[styles.directionRow , styles.marginTop_5]}>
                                 <Text style={[styles.textRegular , styles.text_White , styles.textSize_13, {marginRight:5}]}>مسافه ٦ كيلو</Text>
-                                <TouchableOpacity>
+                                <TouchableOpacity  onPress={() =>  navigation.navigate('getLocation' , {pathName:'restaurantDetails'})}>
                                     <Text style={[styles.textRegular , styles.text_mstarda , styles.textSize_13, {marginRight:5}]}>( { i18n.t('locationOnMap') } )</Text>
                                 </TouchableOpacity>
                             </View>
@@ -196,12 +196,12 @@ function RestaurantDetails({navigation,route}) {
                                 <Label style={[styles.label , styles.text_black]}>{ i18n.t('specialOrderDet') }</Label>
                                 <Textarea
                                     style={[styles.input , styles.height_120 , styles.paddingVertical_10 , styles.bg_light_gray ,
-                                        {borderTopRightRadius :10 , borderRadius :10  , lineHeight:22}]}
+                                        {borderTopRightRadius :10 , borderTopLeftRadius :10 , borderRadius :10  , lineHeight:22}]}
                                     onChangeText={(details) => setDetails(details)}
                                     value={details}
                                 />
 
-                                <TouchableOpacity onPress={() => setActiveType(null)} style={[styles.mstrdaBtn , styles.Width_100 , styles.marginVertical_20]}>
+                                <TouchableOpacity onPress={() => navigation.navigate('orderData')} style={[styles.mstrdaBtn , styles.Width_100 , styles.marginVertical_20]}>
                                     <Text style={[styles.textRegular , styles.text_White , styles.textSize_15]}>{ i18n.t('confirm') }</Text>
                                 </TouchableOpacity>
 

@@ -100,7 +100,7 @@ function GetLocation({ navigation, route }) {
         <Container style={[styles.bg_black]}>
             <Content contentContainerStyle={[styles.bgFullWidth , styles.bg_black]}>
 
-                <Header navigation={navigation} title={ pathName ===  'OrderDetails' ? i18n.t('storeLocation') : null} />
+                <Header navigation={navigation} title={ i18n.t('storeLocation')} />
 
                 <View style={{ flex: 1 , height, width: '100%'}}>
                     {

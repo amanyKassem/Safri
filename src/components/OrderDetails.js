@@ -20,6 +20,7 @@ function OrderDetails({navigation,route}) {
     // const token = useSelector(state => state.auth.user ? state.auth.user.data.token : null);
 
     const orderType = route.params.orderType;
+    const pathName = route.params.pathName ? route.params.pathName : '';
 
     const [orderStatus, setOrderStatus] = useState(2);
     const [showDetails, setShowDetails] = useState(false);
@@ -49,42 +50,53 @@ function OrderDetails({navigation,route}) {
                         </View>
                     </View>
 
-                    <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10]}>
-                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('followOrder') }</Text>
-                    </View>
 
-                    <View style={[styles.marginTop_20,styles.paddingHorizontal_20 , styles.Width_100]}>
-                        <View style={styles.followStep}>
-                            <View style={[styles.skyCircle ,
-                                {backgroundColor: orderStatus === 0 || orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda : '#fff',
-                                    borderColor:  orderStatus === 0 || orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda : COLORS.gray}]}>
-                                <Icon type={'Feather'} name={'check'} style={[styles.checkCircle]} />
-                            </View>
-                            <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14]}>{i18n.t('orderHasReceived')}</Text>
-                            <View style={[styles.stepLine ,
-                                {backgroundColor: orderStatus === 0 || orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda :COLORS.gray,}]}/>
-                        </View>
 
-                        <View style={[styles.followStep ]}>
-                            <View style={[styles.skyCircle ,
-                                {backgroundColor:orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda :'#fff',
-                                    borderColor:orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda :COLORS.gray}]}>
-                                <Icon type={'Feather'} name={'check'} style={[styles.checkCircle]} />
-                            </View>
-                            <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14]}>{i18n.t('processOrder')}</Text>
-                            <View style={[styles.stepLine ,
-                                {backgroundColor:orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda :COLORS.gray,}]}/>
-                        </View>
+                    {
+                        pathName !== 'orderData' ?
+                            <View>
+                                <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10]}>
+                                    <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('followOrder') }</Text>
+                                </View>
+                                <View style={[styles.marginTop_20,styles.paddingHorizontal_20 , styles.Width_100]}>
+                                    <View style={styles.followStep}>
+                                        <View style={[styles.skyCircle ,
+                                            {backgroundColor: orderStatus === 0 || orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda : '#fff',
+                                                borderColor:  orderStatus === 0 || orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda : COLORS.gray}]}>
+                                            <Icon type={'Feather'} name={'check'} style={[styles.checkCircle]} />
+                                        </View>
+                                        <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14]}>{i18n.t('orderHasReceived')}</Text>
+                                        <View style={[styles.stepLine ,
+                                            {backgroundColor: orderStatus === 0 || orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda :COLORS.gray,}]}/>
+                                    </View>
 
-                        <View style={[styles.followStep ]}>
-                            <View style={[styles.skyCircle ,
-                                {backgroundColor:orderStatus === 2  ? COLORS.mstarda : '#fff',
-                                    borderColor:orderStatus === 2  ? COLORS.mstarda : COLORS.gray}]}>
-                                <Icon type={'Feather'} name={'check'} style={[styles.checkCircle]} />
+                                    <View style={[styles.followStep ]}>
+                                        <View style={[styles.skyCircle ,
+                                            {backgroundColor:orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda :'#fff',
+                                                borderColor:orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda :COLORS.gray}]}>
+                                            <Icon type={'Feather'} name={'check'} style={[styles.checkCircle]} />
+                                        </View>
+                                        <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14]}>{i18n.t('processOrder')}</Text>
+                                        <View style={[styles.stepLine ,
+                                            {backgroundColor:orderStatus === 1 || orderStatus === 2 ? COLORS.mstarda :COLORS.gray,}]}/>
+                                    </View>
+
+                                    <View style={[styles.followStep ]}>
+                                        <View style={[styles.skyCircle ,
+                                            {backgroundColor:orderStatus === 2  ? COLORS.mstarda : '#fff',
+                                                borderColor:orderStatus === 2  ? COLORS.mstarda : COLORS.gray}]}>
+                                            <Icon type={'Feather'} name={'check'} style={[styles.checkCircle]} />
+                                        </View>
+                                        <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14]}>{i18n.t('orderReady')}</Text>
+                                    </View>
+                                </View>
                             </View>
-                            <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14]}>{i18n.t('orderReady')}</Text>
-                        </View>
-                    </View>
+                            :
+                            null
+
+                    }
+
+
 
                     <TouchableOpacity onPress={() => setShowDetails(!showDetails)} style={[styles.bg_light_gray , styles.directionRowSpace ,styles.paddingHorizontal_20 , styles.paddingVertical_10]}>
                         <Text style={[styles.textBold , (orderStatus === 1 || orderStatus === 2)&& showDetails ? styles.text_mstarda : styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('orderDetails') }</Text>
@@ -102,7 +114,7 @@ function OrderDetails({navigation,route}) {
                                 <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10]}>
                                     <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14 , styles.alignStart]}>{i18n.t('payMethod') }</Text>
                                 </View>
-                                <Text style={[styles.textRegular,styles.paddingHorizontal_20 , styles.marginVertical_15 , styles.text_gray , styles.textSize_14]}>الدفع عند الاستلام</Text>
+                                <Text style={[styles.textRegular,styles.paddingHorizontal_20 , styles.marginVertical_15 , styles.text_gray , styles.textSize_14 ,styles.alignStart]}>الدفع عند الاستلام</Text>
                                 <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10]}>
                                     <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14 , styles.alignStart]}>الاستلام من المطعم</Text>
                                 </View>
@@ -133,11 +145,16 @@ function OrderDetails({navigation,route}) {
             </Content>
 
             {
-                orderStatus === 2 && orderType !== 2?
-                    <TouchableOpacity onPress={() => navigation.navigate('addUrRate')} style={[styles.mstrdaBtn , styles.Width_100 , styles.Radius_0]}>
-                        <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('addUrRate') }</Text>
+                (orderStatus === 0 && orderType !== 2) || pathName === 'orderData'?
+                    <TouchableOpacity onPress={() => navigation.navigate('myOrders')} style={[styles.mstrdaBtn , styles.Width_100 , styles.Radius_0]}>
+                        <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('cancelOrder') }</Text>
                     </TouchableOpacity>
-                    : null
+                    :
+                    orderStatus === 2 && orderType !== 2?
+                        <TouchableOpacity onPress={() => navigation.navigate('addUrRate')} style={[styles.mstrdaBtn , styles.Width_100 , styles.Radius_0]}>
+                            <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('addUrRate') }</Text>
+                        </TouchableOpacity>
+                        : null
             }
         </Container>
     );

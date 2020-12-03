@@ -172,7 +172,7 @@ function Login({navigation}) {
 
                                    {renderSubmit()}
 
-                                   <TouchableOpacity
+                                   <TouchableOpacity onPress={() => navigation.navigate('MainStack')}
                                        style={[styles.mstrdaBtn , styles.Width_100  , styles.marginBottom_10 , {
                                            backgroundColor:'#ddd'
                                        }]}

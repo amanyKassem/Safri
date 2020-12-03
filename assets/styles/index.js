@@ -473,6 +473,9 @@ const styles = ({
         height: null,
         flex: 1,
     },
+    writingDir : {
+        writingDirection : I18nManager.isRTL ? 'rtl' : 'ltr',
+    },
     flexCenter : {
         alignItems          : 'center',
         justifyContent      : 'center',
@@ -1189,7 +1192,8 @@ const styles = ({
         backgroundColor     :'#eee',
         marginTop           : 15,
         borderRadius        :20,
-        borderTopRightRadius :0
+        borderTopRightRadius :I18nManager.isRTL ? 0 : 20,
+        borderTopLeftRadius :I18nManager.isRTL ? 20 : 0
     },
     viewInput : {
         paddingRight        : 15,

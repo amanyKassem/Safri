@@ -103,7 +103,7 @@ export default function CustomDrawerContent(props) {
                     label={
                         ({ focused, color }) => {
                             return (
-                                <Text style={[styles.textRegular, styles.text_gray , styles.textSize_15, styles.alignStart , {writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr', marginLeft:-10}]}>{ i18n.t('myOrders') }</Text>
+                                <Text style={[styles.textRegular, styles.text_gray , styles.textSize_15, styles.alignStart , {writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr', marginLeft:-10}]}>{ i18n.t('basket') }</Text>
                             )
                         }
                     }
@@ -111,6 +111,25 @@ export default function CustomDrawerContent(props) {
                         ({ focused, color }) => {
                             return (
                                 <Image source={require('../../assets/images/noun_myOrders.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                            )
+                        }
+                    }
+                    onPress={() => props.navigation.navigate('basket')}
+                />
+
+                <DrawerItem
+                    style={[styles.justifyCenter , {marginHorizontal:20 }]}
+                    label={
+                        ({ focused, color }) => {
+                            return (
+                                <Text style={[styles.textRegular, styles.text_gray , styles.textSize_15, styles.alignStart , {writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr', marginLeft:-10}]}>{ i18n.t('myOrders') }</Text>
+                            )
+                        }
+                    }
+                    icon={
+                        ({ focused, color }) => {
+                            return (
+                                <Image source={require('../../assets/images/noun_order_box.png')} style={[styles.icon20]} resizeMode={'contain'} />
                             )
                         }
                     }
@@ -229,6 +248,25 @@ export default function CustomDrawerContent(props) {
                         }
                     }
                     onPress={() => props.navigation.navigate('contactUs')}
+                />
+
+                <DrawerItem
+                    style={[styles.justifyCenter , {marginHorizontal:20 }]}
+                    label={
+                        ({ focused, color }) => {
+                            return (
+                                <Text style={[styles.textRegular, styles.text_gray , styles.textSize_15, styles.alignStart , {writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr', marginLeft:-10}]}>{ i18n.t('comp&sug') }</Text>
+                            )
+                        }
+                    }
+                    icon={
+                        ({ focused, color }) => {
+                            return (
+                                <Image source={require('../../assets/images/noun_complaint.png')} style={[styles.icon20]} resizeMode={'contain'} />
+                            )
+                        }
+                    }
+                    onPress={() => props.navigation.navigate('compAndSug')}
                 />
 
                 <DrawerItem

@@ -30,8 +30,8 @@ function Bills({navigation,route}) {
             <View style={[styles.borderGray,styles.marginBottom_20 , styles.directionRow , styles.Radius_5 , {flex:1 , padding:15}]}>
                 <View style={[styles.directionBasicRow , {flex:1}]}>
                     <View style={[{marginLeft:15}]}>
-                        <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14]}>{ name }</Text>
-                        <Text style={[styles.textRegular , styles.text_mstarda , styles.textSize_14]}>{ price }</Text>
+                        <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14, styles.alignStart]}>{ name }</Text>
+                        <Text style={[styles.textRegular , styles.text_mstarda , styles.textSize_14 , styles.alignStart]}>{ price }</Text>
                     </View>
                 </View>
                 <View style={[{borderLeftWidth:1 , borderLeftColor:'#ddd' , paddingLeft:15} , styles.heightFull , styles.centerContext]}>

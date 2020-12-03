@@ -88,64 +88,94 @@ function Recharge({navigation,route}) {
                         </TouchableOpacity>
                     </View>
 
-                    <View style={[styles.bg_black , styles.paddingHorizontal_20 , styles.paddingVertical_15 , styles.Width_100 , styles.marginTop_25 , styles.Radius_10]}>
 
-                        <Text style={[styles.textBold , styles.text_White , styles.textSize_13 , styles.alignStart]}>{ i18n.t('accName') } : اوامر الشبكة</Text>
-                        <Text style={[styles.textBold , styles.text_White , styles.textSize_13 , styles.marginTop_10 , styles.alignStart]}>{ i18n.t('bankName') } : CIB</Text>
-                        <Text style={[styles.textBold , styles.text_White , styles.textSize_13 , styles.marginTop_10 , styles.alignStart]}>{ i18n.t('accNum') } : 12345</Text>
-                        <Text style={[styles.textBold , styles.text_White , styles.textSize_13 , styles.marginTop_10 , styles.alignStart]}>12345 : { i18n.t('iabn') }</Text>
+                    {
+                        payMethod === '0' ?
+                            <View style={[styles.Width_100]}>
+                                <View style={[styles.bg_black , styles.paddingHorizontal_20 , styles.paddingVertical_15 , styles.Width_100 , styles.marginTop_25 , styles.Radius_10]}>
 
-                    </View>
+                                    <Text style={[styles.textBold , styles.text_White , styles.textSize_13 , styles.alignStart]}>{ i18n.t('accName') } : اوامر الشبكة</Text>
+                                    <Text style={[styles.textBold , styles.text_White , styles.textSize_13 , styles.marginTop_10 , styles.alignStart]}>{ i18n.t('bankName') } : CIB</Text>
+                                    <Text style={[styles.textBold , styles.text_White , styles.textSize_13 , styles.marginTop_10 , styles.alignStart]}>{ i18n.t('accNum') } : 12345</Text>
+                                    <Text style={[styles.textBold , styles.text_White , styles.textSize_13 , styles.marginTop_10 , styles.alignStart]}>12345 : { i18n.t('iabn') }</Text>
+
+                                </View>
+                                <KeyboardAvoidingView style={[styles.Width_100 , styles.marginTop_20 , styles.marginBottom_10]}>
+                                    <Form style={[styles.Width_100 , styles.flexCenter]}>
+
+                                        <Item style={[styles.item , {marginBottom:0}]}>
+                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
+                                                borderColor:bankName ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:bankName ? '#fff' : '#eee'}]}
+                                                   placeholder={ i18n.t('bankName') }
+                                                   placeholderTextColor={COLORS.midGray}
+                                                   onChangeText={(bankName) => setBankName(bankName)}
+                                                   value={bankName}
+                                            />
+                                        </Item>
+
+                                        <Item style={[styles.item , {marginBottom:0}]}>
+                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
+                                                borderColor:accHolderName ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:accHolderName ? '#fff' : '#eee'}]}
+                                                   placeholder={ i18n.t('accHolderName') }
+                                                   placeholderTextColor={COLORS.midGray}
+                                                   onChangeText={(accHolderName) => setAccHolderName(accHolderName)}
+                                                   value={accHolderName}
+                                            />
+                                        </Item>
+
+                                        <Item style={[styles.item , {marginBottom:0}]}>
+                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
+                                                borderColor:accNum ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:accNum ? '#fff' : '#eee'}]}
+                                                   placeholder={ i18n.t('accNum') }
+                                                   placeholderTextColor={COLORS.midGray}
+                                                   onChangeText={(accNum) => setAccNum(accNum)}
+                                                   value={accNum}
+                                            />
+                                        </Item>
+
+                                        <Item style={[styles.item , {marginBottom:0}]}>
+                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
+                                                borderColor:amountToBeCharged ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:amountToBeCharged ? '#fff' : '#eee'}]}
+                                                   placeholder={ i18n.t('amountToBeCharged') }
+                                                   placeholderTextColor={COLORS.midGray}
+                                                   onChangeText={(amountToBeCharged) => setAmountToBeCharged(amountToBeCharged)}
+                                                   value={amountToBeCharged}
+                                                   keyboardType={'number-pad'}
+                                            />
+                                        </Item>
+
+                                        {renderSubmit()}
+
+                                    </Form>
+                                </KeyboardAvoidingView>
+                            </View>
+
+                            :
+                            <View style={[styles.directionRow , styles.Width_100, styles.marginTop_25]}>
+
+                                <TouchableOpacity>
+                                    <Image source={require('../../assets/images/visa.png')} style={[styles.icon45]} resizeMode={'contain'} />
+                                </TouchableOpacity>
+
+                                <TouchableOpacity>
+                                    <Image source={require('../../assets/images/mastercard.png')} style={[styles.icon45 , {marginLeft:20}]} resizeMode={'contain'} />
+                                </TouchableOpacity>
 
 
-                    <KeyboardAvoidingView style={[styles.Width_100 , styles.marginTop_20 , styles.marginBottom_10]}>
-                        <Form style={[styles.Width_100 , styles.flexCenter]}>
+                                <TouchableOpacity>
+                                    <Image source={require('../../assets/images/madi.png')} style={[styles.icon45 , {marginLeft:20}]} resizeMode={'contain'} />
+                                </TouchableOpacity>
 
-                            <Item style={[styles.item , {marginBottom:0}]}>
-                                <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
-                                    borderColor:bankName ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:bankName ? '#fff' : '#eee'}]}
-                                       placeholder={ i18n.t('bankName') }
-                                       placeholderTextColor={COLORS.midGray}
-                                       onChangeText={(bankName) => setBankName(bankName)}
-                                       value={bankName}
-                                />
-                            </Item>
 
-                            <Item style={[styles.item , {marginBottom:0}]}>
-                                <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
-                                    borderColor:accHolderName ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:accHolderName ? '#fff' : '#eee'}]}
-                                       placeholder={ i18n.t('accHolderName') }
-                                       placeholderTextColor={COLORS.midGray}
-                                       onChangeText={(accHolderName) => setAccHolderName(accHolderName)}
-                                       value={accHolderName}
-                                />
-                            </Item>
+                                <TouchableOpacity>
+                                    <Image source={require('../../assets/images/sdad.png')} style={[styles.icon45 , {marginLeft:20}]} resizeMode={'contain'} />
+                                </TouchableOpacity>
 
-                            <Item style={[styles.item , {marginBottom:0}]}>
-                                <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
-                                    borderColor:accNum ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:accNum ? '#fff' : '#eee'}]}
-                                       placeholder={ i18n.t('accNum') }
-                                       placeholderTextColor={COLORS.midGray}
-                                       onChangeText={(accNum) => setAccNum(accNum)}
-                                       value={accNum}
-                                />
-                            </Item>
+                            </View>
 
-                            <Item style={[styles.item , {marginBottom:0}]}>
-                                <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
-                                    borderColor:amountToBeCharged ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:amountToBeCharged ? '#fff' : '#eee'}]}
-                                       placeholder={ i18n.t('amountToBeCharged') }
-                                       placeholderTextColor={COLORS.midGray}
-                                       onChangeText={(amountToBeCharged) => setAmountToBeCharged(amountToBeCharged)}
-                                       value={amountToBeCharged}
-                                       keyboardType={'number-pad'}
-                                />
-                            </Item>
+                    }
 
-                            {renderSubmit()}
 
-                        </Form>
-                    </KeyboardAvoidingView>
 
                 </View>
 

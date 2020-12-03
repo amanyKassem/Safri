@@ -39,7 +39,7 @@ function WaitingOrder({navigation,route}) {
                         <Image source={require('../../assets/images/succes_icon.png')} style={[styles.icon100 , styles.marginBottom_40]} resizeMode={'contain'} />
                         <Text style={[styles.textBold , styles.text_mstarda , styles.textCenter , styles.textSize_20 ,styles.SelfCenter , styles.marginBottom_25]}>{ i18n.t('waitOrder') }</Text>
 
-                        <TouchableOpacity onPress={() => navigation.navigate('orderDetails', {orderType:0})} style={[styles.mstrdaBtn , styles.Width_100 , styles.marginTop_60]}>
+                        <TouchableOpacity onPress={() => navigation.navigate('orderDetails', {orderType:0, pathName:'waitingOrder'})} style={[styles.mstrdaBtn , styles.Width_100 , styles.marginTop_60]}>
                             <Text style={[styles.textRegular , styles.text_White , styles.textSize_15]}>{ i18n.t('followOrder') }</Text>
                         </TouchableOpacity>
 

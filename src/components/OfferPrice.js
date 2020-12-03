@@ -44,10 +44,20 @@ function OfferPrice({navigation,route}) {
                         </View>
                     </View>
 
-                    <View style={[styles.flexCenter]}>
-                        <Text style={[styles.textRegular , styles.text_mstarda , styles.textSize_14 , styles.marginBottom_5]}>{i18n.t('orderNum') }</Text>
-                        <Text style={[styles.textRegular , styles.text_mstarda , styles.textSize_14 , styles.marginBottom_5]}>300 </Text>
+                    <View style={[styles.flexCenter , styles.marginTop_60]}>
+                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_20 , styles.marginBottom_5, styles.textCenter]}>{i18n.t('priceOffered') }</Text>
+                        <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_20 , styles.textCenter]}>300 ر.س </Text>
                     </View>
+
+
+                    <TouchableOpacity onPress={() => navigation.navigate('specialOrder')} style={[styles.mstrdaBtn , styles.Width_90 , styles.marginTop_65 , styles.SelfCenter , styles.bg_black]}>
+                        <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('accept') }</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('specialOrder')} style={[styles.mstrdaBtn , styles.Width_90  , styles.marginTop_15, styles.SelfCenter ]}>
+                        <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('refuse') }</Text>
+                    </TouchableOpacity>
+
                 </View>
 
             </Content>

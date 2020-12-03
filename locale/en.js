@@ -43,7 +43,7 @@ const en = {
     'watchOffer'                : 'Watch all offers from here',
     'home'                      : 'Home',
     'profile'                   : 'Profile',
-    'myOrders'                  : 'Mu orders',
+    'myOrders'                  : 'My orders',
     'wallet'                    : 'Wallet',
     'specialOrder'              : 'Special order',
     'bills'                     : 'Bills',
@@ -131,6 +131,12 @@ const en = {
     'waitOrder'                 : 'Waiting to confirm your order from the restaurant',
     'howUrOrder'                : 'How was your request ?',
     'offerPrice'                : 'Offer Price',
+    'priceOffered'              : 'The price offered',
+    'accept'                    : 'Accept',
+    'refuse'                    : 'Refuse',
+    'comp&sug'                  : 'Complaints and suggestions',
+    'subject'                   : 'Subject',
+    'orderData'                 : 'Order data',
 };
 
 export default en;

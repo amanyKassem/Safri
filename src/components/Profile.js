@@ -148,7 +148,7 @@ function Profile({navigation,route}) {
 
                             <Item style={[styles.item]}>
                                 <Label style={[styles.label]}>{ i18n.t('username') }</Label>
-                                <Input style={[styles.input , {borderTopRightRadius :25 , borderColor:username ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:username ? '#fff' : '#eee'}]}
+                                <Input style={[styles.input , {borderTopRightRadius :25 ,borderTopLeftRadius :25 , borderColor:username ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:username ? '#fff' : '#eee'}]}
                                        onChangeText={(username) => setUsername(username)}
                                        value={username}
                                        editable={editName}
@@ -160,7 +160,7 @@ function Profile({navigation,route}) {
 
                             <Item style={[styles.item]}>
                                 <Label style={[styles.label]}>{ i18n.t('phone') }</Label>
-                                <Input style={[styles.input , {borderTopRightRadius :25 , borderColor:phone ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:phone ? '#fff' : '#eee'}]}
+                                <Input style={[styles.input , {borderTopRightRadius :25 ,borderTopLeftRadius :25 , borderColor:phone ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:phone ? '#fff' : '#eee'}]}
                                        onChangeText={(phone) => setPhone(phone)}
                                        value={phone}
                                        editable={editPhone}
@@ -172,9 +172,10 @@ function Profile({navigation,route}) {
 
                             <Item style={[styles.item]}>
                                 <Label style={[styles.label]}>{ i18n.t('mail') }</Label>
-                                <Input style={[styles.input , {borderTopRightRadius :25 , borderColor:mail ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:mail ? '#fff' : '#eee'}]}
+                                <Input style={[styles.input , {borderTopRightRadius :25 ,borderTopLeftRadius :25 , borderColor:mail ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:mail ? '#fff' : '#eee'}]}
                                        onChangeText={(mail) => setMail(mail)}
                                        value={mail}
+                                       keyboardType={'email-address'}
                                        editable={editMail}
                                 />
                                 <TouchableOpacity onPress={() =>setEditMail(!editMail)} style={{position:'absolute' , right:10 , bottom:10}}>
@@ -214,7 +215,7 @@ function Profile({navigation,route}) {
 
                             <Item style={[styles.item , styles.height_80]}>
                                 <Label style={[styles.label]}>{ i18n.t('currentPassword') }</Label>
-                                <Input style={[styles.input , {borderTopRightRadius :25 , borderColor:password ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:password ? '#fff' : '#eee'}]}
+                                <Input style={[styles.input , {borderTopRightRadius :25 ,borderTopLeftRadius :25, borderColor:password ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:password ? '#fff' : '#eee'}]}
                                        onChangeText={(password) => setPassword(password)}
                                        value={password}
                                        secureTextEntry={!showPass}
@@ -227,7 +228,7 @@ function Profile({navigation,route}) {
 
                             <Item style={[styles.item , styles.height_80]}>
                                 <Label style={[styles.label]}>{ i18n.t('newpass') }</Label>
-                                <Input style={[styles.input , {borderTopRightRadius :25 , borderColor:newpass ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:newpass ? '#fff' : '#eee'}]}
+                                <Input style={[styles.input , {borderTopRightRadius :25 ,borderTopLeftRadius :25, borderColor:newpass ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:newpass ? '#fff' : '#eee'}]}
                                        onChangeText={(newpass) => setNewpass(newpass)}
                                        value={newpass}
                                        secureTextEntry={!showNewPass}
@@ -240,7 +241,7 @@ function Profile({navigation,route}) {
 
                             <Item style={[styles.item , styles.height_80]}>
                                 <Label style={[styles.label]}>{ i18n.t('confirmNewPass') }</Label>
-                                <Input style={[styles.input , {borderTopRightRadius :25 , borderColor:confirmNewPass ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:confirmNewPass ? '#fff' : '#eee'}]}
+                                <Input style={[styles.input , {borderTopRightRadius :25 ,borderTopLeftRadius :25, borderColor:confirmNewPass ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:confirmNewPass ? '#fff' : '#eee'}]}
                                        onChangeText={(confirmNewPass) => setConfirmNewPass(confirmNewPass)}
                                        value={confirmNewPass}
                                        secureTextEntry={!showConPass}

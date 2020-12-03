@@ -37,7 +37,7 @@ function RateSuccessfully({navigation,route}) {
                     <View style={[styles.bgFullWidth, styles.Width_100 , styles.paddingHorizontal_25 , styles.flexCenter]}>
 
                         <Image source={require('../../assets/images/check_orange.png')} style={[styles.icon70 , styles.marginBottom_40]} resizeMode={'contain'} />
-                        <Text style={[styles.textBold , styles.text_black , styles.textSize_18 ,styles.SelfCenter , styles.marginBottom_25]}>{ i18n.t('ratedSuccessfully') }</Text>
+                        <Text style={[styles.textBold , styles.text_black , styles.textSize_18 ,styles.SelfCenter , styles.textCenter , styles.marginBottom_25 , {lineHeight:24}]}>{ i18n.t('ratedSuccessfully') }</Text>
 
                         <TouchableOpacity onPress={() => navigation.navigate('home')} style={[styles.mstrdaBtn , styles.Width_100 , styles.marginTop_60]}>
                             <Text style={[styles.textRegular , styles.text_White , styles.textSize_15]}>{ i18n.t('home') }</Text>
