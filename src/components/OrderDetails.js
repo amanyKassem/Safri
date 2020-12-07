@@ -55,8 +55,8 @@ function OrderDetails({navigation,route}) {
                     {
                         pathName !== 'orderData' ?
                             <View>
-                                <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10]}>
-                                    <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('followOrder') }</Text>
+                                <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 ,  styles.directionRow  , styles.height_45]}>
+                                    <Text style={[styles.textBold , styles.text_gray , styles.textSize_14]}>{i18n.t('followOrder') }</Text>
                                 </View>
                                 <View style={[styles.marginTop_20,styles.paddingHorizontal_20 , styles.Width_100]}>
                                     <View style={styles.followStep}>
@@ -98,27 +98,27 @@ function OrderDetails({navigation,route}) {
 
 
 
-                    <TouchableOpacity onPress={() => setShowDetails(!showDetails)} style={[styles.bg_light_gray , styles.directionRowSpace ,styles.paddingHorizontal_20 , styles.paddingVertical_10]}>
-                        <Text style={[styles.textBold , (orderStatus === 1 || orderStatus === 2)&& showDetails ? styles.text_mstarda : styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('orderDetails') }</Text>
+                    <TouchableOpacity onPress={() => setShowDetails(!showDetails)} style={[styles.bg_light_gray , styles.directionRowSpace ,styles.paddingHorizontal_20 , styles.height_45]}>
+                        <Text style={[styles.textBold , (orderStatus === 1 || orderStatus === 2)&& showDetails ? styles.text_mstarda : styles.text_gray , styles.textSize_14 ]}>{i18n.t('orderDetails') }</Text>
                         <Icon type={'AntDesign'} name={(orderStatus === 1 || orderStatus === 2) && showDetails ?  'caretup' : 'caretdown'} style={[styles.textSize_12 , (orderStatus === 1 || orderStatus === 2)&& showDetails ? styles.text_mstarda : styles.text_gray]} />
                     </TouchableOpacity>
 
                     {
                         (orderStatus === 1 || orderStatus === 2) && showDetails?
                             <View style={[styles.marginTop_20]}>
-                                <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13,styles.paddingHorizontal_20 , styles.marginBottom_20 , {lineHeight:24}]}>
+                                <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13,styles.paddingHorizontal_20 , styles.marginBottom_20 , styles.alignStart , styles.writingDir , {lineHeight:24}]}>
                                     أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
                                     أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
                                     أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
                                 </Text>
-                                <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10]}>
-                                    <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14 , styles.alignStart]}>{i18n.t('payMethod') }</Text>
+                                <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.directionRow  , styles.height_45]}>
+                                    <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14]}>{i18n.t('payMethod') }</Text>
                                 </View>
                                 <Text style={[styles.textRegular,styles.paddingHorizontal_20 , styles.marginVertical_15 , styles.text_gray , styles.textSize_14 ,styles.alignStart]}>الدفع عند الاستلام</Text>
-                                <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10]}>
-                                    <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14 , styles.alignStart]}>الاستلام من المطعم</Text>
+                                <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 ,  styles.directionRow  , styles.height_45]}>
+                                    <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14]}>الاستلام من المطعم</Text>
                                 </View>
-                                <Text style={[styles.textRegular,styles.paddingHorizontal_20 , styles.marginVertical_15 , styles.text_gray , styles.textSize_14]}>{i18n.t('storeLocation') }</Text>
+                                <Text style={[styles.textRegular,styles.paddingHorizontal_20 , styles.marginVertical_15 , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('storeLocation') }</Text>
                                 <View style={[styles.directionRow,styles.paddingHorizontal_20 , styles.marginBottom_15]}>
                                     <Icon type={'MaterialIcons'} name={'location-on'} style={[styles.textSize_14 , styles.text_mstarda , {marginRight:5}]} />
                                     <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13]}>السعودية - الرياض</Text>
@@ -133,7 +133,7 @@ function OrderDetails({navigation,route}) {
 
                     {
                         orderType === 2 ?
-                            <TouchableOpacity onPress={() => navigation.navigate('basketDetails')} style={[styles.mstrdaBtn , styles.Width_90 , styles.marginTop_55 , styles.SelfCenter ]}>
+                            <TouchableOpacity onPress={() => navigation.navigate('basketDetails')} style={[styles.mstrdaBtn , styles.Width_90 , styles.marginTop_55 , styles.SelfCenter , styles.marginBottom_25 ]}>
                                 <Text style={[styles.textBold , styles.text_White , styles.textSize_15]}>{ i18n.t('resend') }</Text>
                             </TouchableOpacity>
                             :

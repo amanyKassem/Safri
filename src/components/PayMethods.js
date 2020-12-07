@@ -29,8 +29,8 @@ function PayMethods({navigation,route}) {
 
                 <View style={[styles.bgFullWidth ,styles.bg_White, styles.Width_100,styles.paddingHorizontal_20, {overflow:'hidden'}]}>
 
-                    <View style={[styles.bg_lightMstarda,styles.paddingHorizontal_15  , styles.paddingVertical_10 , styles.marginVertical_20]}>
-                        <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14 , styles.alignStart]}>سيتم الاستلام من المطعم</Text>
+                    <View style={[styles.bg_lightMstarda,styles.paddingHorizontal_15 , styles.directionRow  , styles.height_45 , styles.marginVertical_20]}>
+                        <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14 ]}>سيتم الاستلام من المطعم</Text>
                     </View>
 
                     <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{ i18n.t('selectPayMethod') }</Text>

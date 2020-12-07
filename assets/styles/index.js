@@ -1192,8 +1192,8 @@ const styles = ({
         backgroundColor     :'#eee',
         marginTop           : 15,
         borderRadius        :20,
-        borderTopRightRadius :I18nManager.isRTL ? 0 : 20,
-        borderTopLeftRadius :I18nManager.isRTL ? 20 : 0
+        borderTopRightRadius :I18nManager.isRTL ? isIOS ? 20 : 0 : 20,
+        borderTopLeftRadius :I18nManager.isRTL ? isIOS ? 0 : 20 : 0
     },
     viewInput : {
         paddingRight        : 15,

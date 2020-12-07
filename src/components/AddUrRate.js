@@ -41,7 +41,7 @@ function AddUrRate({navigation,route}) {
                                 starSize={22}
                                 starStyle={{ marginHorizontal: 5 }}
                             />
-                            <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_15 , styles.alignStart, {marginLeft:10}]}>{restStarCount}</Text>
+                            <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_15, {marginLeft:10}]}>{restStarCount}</Text>
                         </View>
                     </View>
 
@@ -56,7 +56,7 @@ function AddUrRate({navigation,route}) {
                                 starSize={22}
                                 starStyle={{ marginHorizontal: 5 }}
                             />
-                            <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_15 , styles.alignStart , {marginLeft:10}]}>{appStarCount}</Text>
+                            <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_15 , {marginLeft:10}]}>{appStarCount}</Text>
                         </View>
                     </View>
 

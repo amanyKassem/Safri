@@ -24,6 +24,8 @@ const isIOS = Platform.OS === 'ios';
 const latitudeDelta = 0.922;
 const longitudeDelta = 0.521;
 
+const IS_IPHONE_X 	= (height === 812 || height === 896) && Platform.OS === 'ios';
+
 function RestaurantDetails({navigation,route}) {
 
     // const lang = useSelector(state => state.lang.lang);
@@ -71,8 +73,8 @@ function RestaurantDetails({navigation,route}) {
 
 
     return (
-        <Container>
-            <Content contentContainerStyle={[styles.bgFullWidth]}>
+        <Container style={[styles.bg_black]}>
+            <Content contentContainerStyle={[styles.bgFullWidth]} scrollEnabled={false}>
                 <ImageBackground source={require('../../assets/images/restu_image.png')} resizeMode={'cover'} style={[styles.Width_100 ,  activeType != null? styles.height_400 : styles.height_340]}>
                     <View style={[styles.overlay_black , styles.heightFull , styles.Width_100]}>
 
@@ -101,7 +103,7 @@ function RestaurantDetails({navigation,route}) {
                                 starSize={12}
                                 starStyle={{ marginHorizontal: 2 , marginTop:10 }}
                             />
-                            <View style={[styles.paddingVertical_7 , styles.Width_60 , styles.centerContext, styles.marginTop_10,{backgroundColor:'#fca00263'}]}>
+                            <View style={[styles.height_40  , styles.Width_60 , styles.centerContext, styles.marginTop_10,{backgroundColor:'#fca00263'}]}>
                                 <Text style={[styles.textRegular , styles.text_White , styles.textSize_13, {marginRight:5}]}>{ i18n.t('minimumOrder') } ٥٠ ريال</Text>
                             </View>
 
@@ -160,7 +162,7 @@ function RestaurantDetails({navigation,route}) {
 
                     {
                         activeType != null?
-                            <View style={[styles.marginTop_10 , styles.paddingHorizontal_20 , {height: height - 460}]}>
+                            <View style={[styles.marginTop_10 , styles.paddingHorizontal_20 , {height:IS_IPHONE_X ? height - 530 :  height - 460}]}>
 
                                 <View style={[styles.Width_100,styles.SelfCenter , styles.marginBottom_10 ]}>
                                     <Input style={[styles.inputSearch , styles.Width_100 , styles.bg_light_gray , {flex:0}]}

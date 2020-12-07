@@ -13,7 +13,7 @@ const en = {
     'send'                      : 'Send',
     'newpass'                   : 'New password',
     'confirm'                   : 'Confirm',
-    'code'                      : 'verification code',
+    'code'                      : 'Verification code',
     'confirmPass'               : 'confirm password',
     'confirmNewPass'            : 'Confirm new password',
     'register'                  : 'Register',

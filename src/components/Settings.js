@@ -36,7 +36,7 @@ function Settings({navigation,route}) {
 
                 <View style={[styles.bgFullWidth ,styles.bg_White, styles.Width_100, {overflow:'hidden'}]}>
 
-                    <View style={[styles.bg_light_gray , styles.marginTop_15]}>
+                    <View style={[styles.bg_light_gray , styles.marginTop_15 , styles.height_45 , styles.directionRow]}>
                         <Text style={[styles.textBold , styles.text_gray , styles.textSize_15 , styles.paddingHorizontal_20 , styles.paddingVertical_10]}>{ i18n.t('chooseLanguage') }</Text>
                     </View>
 

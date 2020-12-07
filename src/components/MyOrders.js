@@ -31,7 +31,7 @@ function MyOrders({navigation,route}) {
                 <View style={[styles.directionBasicRow , {flex:1}]}>
                     <Image source={image} style={[styles.icon70 , styles.Radius_7]} resizeMode={'cover'} />
                     <View style={[{marginLeft:15}]}>
-                        <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14]}>{ name }</Text>
+                        <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14 , styles.marginBottom_5]}>{ name }</Text>
                         <Text style={[styles.textRegular , styles.text_mstarda , styles.textSize_14]}>{ price }</Text>
                     </View>
                 </View>
@@ -53,7 +53,7 @@ function MyOrders({navigation,route}) {
                 <View style={[styles.bgFullWidth ,styles.bg_White, styles.Width_100, {overflow:'hidden'}]}>
 
                     <View>
-                        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={[styles.scrollView , styles.shadow , {width:'103%' , left:-4}]}>
+                        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} contentContainerStyle={[styles.directionRowSpace , styles.paddingHorizontal_15, {minWidth:'100%'}]} style={[styles.scrollView , {borderBottomWidth:1 , borderBottomColor:'#ddd'}]}>
                             <TouchableOpacity onPress={() => setActive(0)} style={[styles.paddingVertical_15 , styles.paddingHorizontal_15 , {borderBottomWidth:2 , borderBottomColor:active === 0 ? COLORS.mstarda : 'transparent'}]}>
                                 <Text style={[styles.textBold , styles.text_gray , styles.textSize_13]}>{ i18n.t('orderInProgress') }</Text>
                             </TouchableOpacity>

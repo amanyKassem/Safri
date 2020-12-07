@@ -36,8 +36,8 @@ function BasketDetails({navigation,route}) {
 
                 <View style={[styles.bgFullWidth ,styles.bg_White, styles.Width_100, {overflow:'hidden'}]}>
 
-                    <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10 , styles.marginVertical_20]}>
-                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('products') }</Text>
+                    <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.height_45 , styles.marginVertical_20 , styles.directionRow]}>
+                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 ]}>{i18n.t('products') }</Text>
                     </View>
 
                     {
@@ -49,9 +49,9 @@ function BasketDetails({navigation,route}) {
                     }
 
 
-                    <View style={[styles.directionRow ,styles.bg_black ,styles.paddingHorizontal_20 , styles.paddingVertical_10 , styles.marginTop_20 , styles.marginBottom_10]}>
+                    <View style={[styles.directionRow ,styles.bg_black ,styles.paddingHorizontal_20 , styles.height_45 , styles.marginTop_20 , styles.marginBottom_10]}>
                         <Image source={require('../../assets/images/promocode.png')} style={[styles.icon25 , {marginRight:15}]} resizeMode={'contain'} />
-                        <Text style={[styles.textBold , styles.text_White , styles.textSize_14 , styles.alignStart]}>{i18n.t('addCoupon') }</Text>
+                        <Text style={[styles.textBold , styles.text_White , styles.textSize_14]}>{i18n.t('addCoupon') }</Text>
                     </View>
 
                     <Item style={[styles.item , styles.Width_90 , styles.SelfCenter]}>
@@ -75,7 +75,7 @@ function BasketDetails({navigation,route}) {
                         <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14]}>233 ر.س</Text>
                     </View>
 
-                    <View style={[styles.directionRowSpace , styles.paddingHorizontal_20 , styles.bg_mstarda, styles.paddingVertical_10 ]}>
+                    <View style={[styles.directionRowSpace , styles.paddingHorizontal_20 , styles.bg_mstarda, styles.height_45 ]}>
                         <Text style={[styles.textBold , styles.text_White , styles.textSize_14]}> {i18n.t('total') } </Text>
                         <Text style={[styles.textBold , styles.text_White , styles.textSize_14]}>233 ر.س</Text>
                     </View>

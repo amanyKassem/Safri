@@ -77,8 +77,8 @@ function ProductDetails({navigation,route}) {
     }
 
     return (
-        <Container>
-            <Content contentContainerStyle={[styles.bgFullWidth]}>
+        <Container style={[styles.bg_black]}>
+            <Content contentContainerStyle={[styles.bgFullWidth , styles.bg_White]}>
                 <ImageBackground source={require('../../assets/images/restu_image.png')} resizeMode={'cover'} style={[styles.Width_100 , styles.height_230 , {borderBottomRightRadius:25 , borderBottomLeftRadius:25 , overflow:'hidden'}]}>
                     <View style={[styles.overlay_black , styles.heightFull , styles.Width_100]}>
 
@@ -89,7 +89,7 @@ function ProductDetails({navigation,route}) {
 
                 <View style={[styles.bgFullWidth ,styles.bg_White, styles.Width_100,styles.paddingHorizontal_20 , styles.marginTop_20, {overflow:'hidden'}]}>
 
-                    <View style={[styles.bg_lightMstarda,styles.paddingHorizontal_15  , styles.paddingVertical_10 , styles.directionRowSpace]}>
+                    <View style={[styles.bg_lightMstarda,styles.paddingHorizontal_15  , styles.height_45 , styles.directionRowSpace]}>
                         <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14 ]}>{i18n.t('orderNum') }</Text>
                         <Text style={[styles.textRegular , styles.text_gray , styles.textSize_14 ]}>12345</Text>
                     </View>
@@ -99,7 +99,7 @@ function ProductDetails({navigation,route}) {
                         <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_16 ]}>20 ر.س</Text>
                     </View>
 
-                    <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13 , styles.marginTop_15 , {lineHeight:24}]}>
+                    <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13 , styles.marginTop_15 , styles.alignStart , styles.writingDir , {lineHeight:24}]}>
                         أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
                         أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
                         أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام

@@ -36,34 +36,6 @@ function Login({navigation}) {
     const [spinner, setSpinner] = useState(false);
     const [showPass, setShowPass] = useState(false);
 
-    const getDeviceId = async () => {
-        const {status: existingStatus} = await Permissions.getAsync(
-            Permissions.NOTIFICATIONS
-        );
-
-        let finalStatus = existingStatus;
-
-        if (existingStatus !== 'granted') {
-            const {status} = await Permissions.askAsync(Permissions.NOTIFICATIONS);
-            finalStatus = status;
-        }
-
-        if (finalStatus !== 'granted') {
-            return;
-        }
-
-        const deviceId = await Notifications.getExpoPushTokenAsync();
-
-        setDeviceId(deviceId);
-        setUserId(null);
-
-        AsyncStorage.setItem('deviceID', deviceId);
-    };
-
-    useEffect(() => {
-        getDeviceId()
-    }, []);
-
     // useEffect(() => {
     //     setTimeout(() => setSpinner(false), 500);
     // }, [auth]);

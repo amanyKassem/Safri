@@ -104,7 +104,7 @@ function Recharge({navigation,route}) {
                                     <Form style={[styles.Width_100 , styles.flexCenter]}>
 
                                         <Item style={[styles.item , {marginBottom:0}]}>
-                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
+                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 ,borderTopLeftRadius :5 , borderRadius:5 ,
                                                 borderColor:bankName ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:bankName ? '#fff' : '#eee'}]}
                                                    placeholder={ i18n.t('bankName') }
                                                    placeholderTextColor={COLORS.midGray}
@@ -114,7 +114,7 @@ function Recharge({navigation,route}) {
                                         </Item>
 
                                         <Item style={[styles.item , {marginBottom:0}]}>
-                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
+                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 ,borderTopLeftRadius :5 , borderRadius:5 ,
                                                 borderColor:accHolderName ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:accHolderName ? '#fff' : '#eee'}]}
                                                    placeholder={ i18n.t('accHolderName') }
                                                    placeholderTextColor={COLORS.midGray}
@@ -124,7 +124,7 @@ function Recharge({navigation,route}) {
                                         </Item>
 
                                         <Item style={[styles.item , {marginBottom:0}]}>
-                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
+                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 ,borderTopLeftRadius :5 , borderRadius:5 ,
                                                 borderColor:accNum ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:accNum ? '#fff' : '#eee'}]}
                                                    placeholder={ i18n.t('accNum') }
                                                    placeholderTextColor={COLORS.midGray}
@@ -134,7 +134,7 @@ function Recharge({navigation,route}) {
                                         </Item>
 
                                         <Item style={[styles.item , {marginBottom:0}]}>
-                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 , borderRadius:5 ,
+                                            <Input style={[styles.input , styles.height_60 , {borderTopRightRadius :5 ,borderTopLeftRadius :5 , borderRadius:5 ,
                                                 borderColor:amountToBeCharged ? COLORS.mstarda : '#eee', borderWidth:1 , backgroundColor:amountToBeCharged ? '#fff' : '#eee'}]}
                                                    placeholder={ i18n.t('amountToBeCharged') }
                                                    placeholderTextColor={COLORS.midGray}

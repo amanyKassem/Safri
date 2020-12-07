@@ -29,19 +29,19 @@ function OrderData({navigation,route}) {
 
                 <View style={[styles.bgFullWidth ,styles.bg_White, styles.Width_100, {overflow:'hidden'}]}>
 
-                    <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10 , styles.marginVertical_20]}>
-                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('orderDetails') }</Text>
+                    <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.height_45 , styles.directionRow , styles.marginVertical_20]}>
+                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_14]}>{i18n.t('orderDetails') }</Text>
                     </View>
 
-                    <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13,styles.paddingHorizontal_20 , {lineHeight:24}]}>
+                    <Text style={[styles.textRegular , styles.text_midGray , styles.textSize_13,styles.paddingHorizontal_20 , styles.alignStart , styles.writingDir , {lineHeight:24}]}>
                         أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
                         أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
                         أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام أي كلااااااام
                     </Text>
 
 
-                    <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.paddingVertical_10 , styles.marginVertical_20]}>
-                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart]}>{i18n.t('payMethod') }</Text>
+                    <View style={[styles.bg_light_gray ,styles.paddingHorizontal_20 , styles.height_45 , styles.directionRow , styles.marginVertical_20]}>
+                        <Text style={[styles.textBold , styles.text_gray , styles.textSize_14]}>{i18n.t('payMethod') }</Text>
                     </View>
 
                     <Text style={[styles.textBold , styles.text_gray , styles.textSize_14 , styles.alignStart, styles.paddingHorizontal_20]}>{ i18n.t('selectPayMethod') }</Text>
@@ -93,8 +93,8 @@ function OrderData({navigation,route}) {
                             <Text style={[styles.textRegular , payMethod === '4' ? styles.text_mstarda : styles.text_gray , styles.textSize_14 , {marginLeft:10}]}>{ i18n.t('byApple') }</Text>
                         </TouchableOpacity>
 
-                        <View style={[styles.bg_lightMstarda,styles.paddingHorizontal_15  , styles.paddingVertical_10 , styles.marginVertical_20]}>
-                            <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14 , styles.alignStart]}>سيتم الاستلام من المطعم</Text>
+                        <View style={[styles.bg_lightMstarda,styles.paddingHorizontal_15  , styles.height_45 , styles.directionRow , styles.marginVertical_20]}>
+                            <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_14]}>سيتم الاستلام من المطعم</Text>
                         </View>
 
                         <TouchableOpacity onPress={() => navigation.navigate('orderDetails', {orderType:'0' , pathName:'orderData'})} style={[styles.mstrdaBtn , styles.Width_100 , styles.SelfCenter  , styles.marginTop_40 , styles.marginBottom_25]}>

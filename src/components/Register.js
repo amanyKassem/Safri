@@ -62,6 +62,10 @@ function Register({navigation}) {
                 <Content contentContainerStyle={[styles.bgFullWidth]}>
                     <View style={[styles.bgFullWidth, styles.Width_100 , styles.paddingHorizontal_25]}>
 
+                        <TouchableOpacity onPress={() => navigation.goBack()} style={[{position:'absolute' , left:20 , top:35}]}>
+                            <Icon type={'AntDesign'} name={"arrowleft"} style={[styles.textSize_28,styles.text_gray]} />
+                        </TouchableOpacity>
+
                         <Image source={require('../../assets/images/logo_sofri.png')} style={[styles.icon160 ,styles.SelfCenter , styles.marginTop_25]} resizeMode={'contain'} />
                         <Text style={[styles.textBold , styles.text_mstarda , styles.textSize_18 ,styles.SelfCenter , styles.marginBottom_25]}>{ i18n.t('createAcc') }</Text>
 
